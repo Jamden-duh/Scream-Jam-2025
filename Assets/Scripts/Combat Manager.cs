@@ -2,14 +2,17 @@ using UnityEngine;
 
 public class CombatManager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public Player player;
+    public Enemy enemy;
+
+    public bool playerTurn;
+
+    private void Start()
     {
-        
+        StartBattle();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void StartBattle()
     {
         
     }
