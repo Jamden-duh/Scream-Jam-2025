@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -31,6 +32,8 @@ public class CombatManager : MonoBehaviour
 
     public bool playerTurn;
 
+    private bool disableInput;
+
     private void Start()
     {
         hitTimerPosition = hitTimer.position;
@@ -39,14 +42,14 @@ public class CombatManager : MonoBehaviour
 
     private void Update()
     {
-        timerTime += Time.deltaTime;
+        timerTime += Time.deltaTime * indicatorSpeed;
 
         hitTimingIndicator.position = 
             hitTimerPosition - hitTimerWidth
-            * Mathf.Sin(timerTime * indicatorSpeed)
+            * Mathf.Sin(timerTime)
             * Vector2.right;
 
-        if (Keyboard.current.spaceKey.wasPressedThisFrame)
+        if (!disableInput && Keyboard.current.spaceKey.wasPressedThisFrame)
         {
             if (IsInHitRange(hitTimingIndicator.position.x, strongCrit))
             {
@@ -68,6 +71,7 @@ public class CombatManager : MonoBehaviour
             {
                 Debug.Log("No collision");
             }
+            StartCoroutine(StopIndicator());
         }
     }
 
@@ -84,5 +88,17 @@ public class CombatManager : MonoBehaviour
             return true;
         }
         return false;
+    }
+
+    private IEnumerator StopIndicator()
+    {
+        float temp = indicatorSpeed;
+        indicatorSpeed = 0;
+        disableInput = true;
+
+        yield return new WaitForSeconds(0.5f);
+
+        indicatorSpeed = temp;
+        disableInput = false;
     }
 }
