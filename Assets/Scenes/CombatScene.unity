@@ -2082,14 +2082,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   enemy: {fileID: 0}
-  hitTimingIndicator: {fileID: 123769349}
-  hitTimer: {fileID: 1713388416}
-  indicatorSpeed: 6
-  hitTimerWidth: 600
-  strongCrit: {fileID: 2077619627}
-  weakCrit: {fileID: 1474727730}
-  normalHit: {fileID: 351278346}
-  weakHit: {fileID: 393252623}
+  hitTimingIndicator: {fileID: 0}
+  hitTimer: {fileID: 0}
+  indicatorSpeed: 0
+  hitTimerWidth: 0
+  strongCrit: {fileID: 0}
+  weakCrit: {fileID: 0}
+  normalHit: {fileID: 0}
+  weakHit: {fileID: 0}
   playerTurn: 0
 --- !u!4 &1110233556
 Transform:
