@@ -1,6 +1,9 @@
 using System.Collections;
+using System.Collections.Generic;
+using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class CombatManager : MonoBehaviour
 {
@@ -10,10 +13,12 @@ public class CombatManager : MonoBehaviour
     private Enemy enemy;
 
     [SerializeField]
-    private Transform hitTimingIndicator;
+    private GameObject hitIndicatorPrefab;
+    private List<Transform> hitTimingIndicators;
+    private List<float> hitTimingOffsets;
+
     [SerializeField]
     private Transform hitTimer;
-    private Vector2 hitTimerPosition;
 
     [SerializeField]
     private float indicatorSpeed;
@@ -29,55 +34,120 @@ public class CombatManager : MonoBehaviour
     private RectTransform normalHit;
     [SerializeField]
     private RectTransform weakHit;
+    [SerializeField]
+    private float[] damageMultipliers;
 
-    public bool playerTurn;
+    [SerializeField]
+    private Color[] hitColors;
+
+    private float damageSum;
+
+    private bool playerTurn;
 
     private bool disableInput;
 
+    [SerializeField]
+    private GameObject inputWindow;
+
     private void Start()
     {
-        hitTimerPosition = hitTimer.position;
         StartBattle();
     }
 
     private void Update()
     {
-        timerTime += Time.deltaTime * indicatorSpeed;
-
-        hitTimingIndicator.position = 
-            hitTimerPosition - hitTimerWidth
-            * Mathf.Sin(timerTime)
-            * Vector2.right;
-
-        if (!disableInput && Keyboard.current.spaceKey.wasPressedThisFrame)
+        if (playerTurn)
         {
-            if (IsInHitRange(hitTimingIndicator.position.x, strongCrit))
+            timerTime += Time.deltaTime * indicatorSpeed;
+
+            for (int i = 0; i < hitTimingIndicators.Count; i++)
             {
-                Debug.Log("Strong crit");
+                hitTimingIndicators[i].position = hitTimer.position + hitTimerWidth * Mathf.Sin(timerTime + hitTimingOffsets[i]) * Vector3.right;
             }
-            else if (IsInHitRange(hitTimingIndicator.position.x, weakCrit))
+
+            if (!disableInput && Keyboard.current.spaceKey.wasPressedThisFrame)
             {
-                Debug.Log("Weak crit");
+                // janky solution but it should work
+                if (hitTimingIndicators.Count == 6)
+                {
+                    foreach (Transform indicator in hitTimingIndicators)
+                    {
+                        int hitStrength = EvaluateHit(indicator);
+
+                        damageSum += damageMultipliers[hitStrength];
+                    }
+
+                    hitTimingIndicators.Clear();
+                    hitTimingOffsets.Clear();
+
+                    if (hitTimingIndicators.Count == 0)
+                    {
+                        playerTurn = false;
+                        StartCoroutine(HideTimer());
+                    }
+                }
+                else if (hitTimingIndicators.Count != 0)
+                {
+                    int hitStrength = EvaluateHit(hitTimingIndicators[0]);
+
+                    hitTimingIndicators.RemoveAt(0);
+                    hitTimingOffsets.RemoveAt(0);
+
+                    if (hitTimingIndicators.Count == 0)
+                    {
+                        playerTurn = false;
+                        StartCoroutine(HideTimer());
+                    }
+                }
             }
-            else if (IsInHitRange(hitTimingIndicator.position.x, normalHit))
-            {
-                Debug.Log("Normal hit");
-            }
-            else if (IsInHitRange(hitTimingIndicator.position.x, weakHit))
-            {
-                Debug.Log("Weak hit");
-            }
-            else
-            {
-                Debug.Log("No collision");
-            }
-            StartCoroutine(StopIndicator());
+        }
+        else
+        {
+            StartCoroutine(EnemyTurn());
+        }
+    }
+
+    private int EvaluateHit(Transform indicator)
+    {
+        if (IsInHitRange(indicator.position.x, strongCrit))
+        {
+            StartCoroutine(StopIndicator(indicator, 3));
+            return 3;
+        }
+        else if (IsInHitRange(indicator.position.x, weakCrit))
+        {
+            StartCoroutine(StopIndicator(indicator, 2));
+            return 2;
+        }
+        else if (IsInHitRange(indicator.position.x, normalHit))
+        {
+            StartCoroutine(StopIndicator(indicator, 1));
+            return 1;
+        }
+        else
+        {
+            StartCoroutine(StopIndicator(indicator, 0));
+            return 0;
         }
     }
 
     public void StartBattle()
     {
-        
+        hitTimingOffsets = new();
+        if (hitTimingIndicators != null)
+            RemoveHitIndicators();
+        else
+            hitTimingIndicators = new();
+
+        StartTurn();
+    }
+
+    public void StartTurn()
+    {
+        inputWindow.SetActive(true);
+        hitTimer.gameObject.SetActive(false);
+        playerTurn = true;
+        damageSum = 0;
     }
 
     private bool IsInHitRange(float pos, RectTransform range)
@@ -90,15 +160,85 @@ public class CombatManager : MonoBehaviour
         return false;
     }
 
-    private IEnumerator StopIndicator()
+    private IEnumerator StopIndicator(Transform indicator, int hitType)
     {
-        float temp = indicatorSpeed;
-        indicatorSpeed = 0;
-        disableInput = true;
+        Image sprite = indicator.GetComponent<Image>();
+        sprite.color = hitColors[hitType];
+        
+        yield return new WaitForSeconds(0.2f);
 
-        yield return new WaitForSeconds(0.5f);
+        Destroy(indicator.gameObject);
+    }
 
-        indicatorSpeed = temp;
-        disableInput = false;
+    private IEnumerator HideTimer()
+    {
+        yield return new WaitForSeconds(0.2f);
+
+        hitTimer.gameObject.SetActive(false);
+    }
+
+    /// <summary>
+    /// Called by all attack functions
+    /// </summary>
+    private void DoAttack()
+    {
+        timerTime = 0;
+        RemoveHitIndicators();
+        damageSum = 0;
+        hitTimer.gameObject.SetActive(true);
+        inputWindow.SetActive(false);
+    }
+
+    public void BasicAttack()
+    {
+        DoAttack();
+        // 1x100%
+        hitTimingIndicators.Add(SpawnIndicator(0));
+    }
+
+    public void TripleAttack()
+    {
+        DoAttack();
+        // 3x40% : 120% max
+        hitTimingIndicators.Add(SpawnIndicator(0));
+        hitTimingIndicators.Add(SpawnIndicator(-0.5f));
+        hitTimingIndicators.Add(SpawnIndicator(-1f));
+    }
+
+    public void SpreadAttack()
+    {
+        DoAttack();
+        // 6x30% : 180% max
+        for (int i = 0; i < 6; i++)
+        {
+            hitTimingIndicators.Add(SpawnIndicator(Random.Range(0, 20f)));
+        }
+    }
+
+    private void RemoveHitIndicators()
+    {
+        for (int i = hitTimingIndicators.Count - 1; i >= 0; i--)
+        {
+            Destroy(hitTimingIndicators[i].gameObject);
+        }
+        hitTimingIndicators.Clear();
+    }
+
+    private Transform SpawnIndicator(float offset)
+    {
+        hitTimingOffsets.Add(offset);
+        GameObject indicator = Instantiate(hitIndicatorPrefab, hitTimer.position - (1 + offset) * hitTimerWidth * Vector3.right, Quaternion.identity, hitTimer);
+        return indicator.transform;
+    }
+
+    private IEnumerator EnemyTurn()
+    {
+        // wait for hit indicator to disappear
+        yield return new WaitForSeconds(0.2f);
+
+        Debug.Log("enemy turn");
+
+        yield return new WaitForSeconds(1f);
+        StartTurn();
     }
 }
