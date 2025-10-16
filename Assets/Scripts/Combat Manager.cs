@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class CombatManager : MonoBehaviour
@@ -11,6 +12,8 @@ public class CombatManager : MonoBehaviour
     private Player player;
     [SerializeField]
     private Enemy enemy;
+    [SerializeField]
+    private Slider enemyHealthBar;
 
     [SerializeField]
     private GameObject hitIndicatorPrefab;
@@ -51,7 +54,7 @@ public class CombatManager : MonoBehaviour
 
     private void Start()
     {
-        StartBattle();
+        StartBattle(enemy);
     }
 
     private void Update()
@@ -83,7 +86,7 @@ public class CombatManager : MonoBehaviour
                     if (hitTimingIndicators.Count == 0)
                     {
                         playerTurn = false;
-                        StartCoroutine(HideTimer());
+                        StartCoroutine(EndPlayerTurn());
                     }
                 }
                 else if (hitTimingIndicators.Count != 0)
@@ -96,14 +99,12 @@ public class CombatManager : MonoBehaviour
                     if (hitTimingIndicators.Count == 0)
                     {
                         playerTurn = false;
-                        StartCoroutine(HideTimer());
+                        StartCoroutine(EndPlayerTurn());
                     }
+
+                    damageSum += hitStrength;
                 }
             }
-        }
-        else
-        {
-            StartCoroutine(EnemyTurn());
         }
     }
 
@@ -131,7 +132,7 @@ public class CombatManager : MonoBehaviour
         }
     }
 
-    public void StartBattle()
+    public void StartBattle(Enemy enemy)
     {
         hitTimingOffsets = new();
         if (hitTimingIndicators != null)
@@ -139,6 +140,8 @@ public class CombatManager : MonoBehaviour
         else
             hitTimingIndicators = new();
 
+        enemy.healthBar = enemyHealthBar;
+        enemy.Health = enemy.maxHealth; // this sets the health bar
         StartTurn();
     }
 
@@ -170,11 +173,34 @@ public class CombatManager : MonoBehaviour
         Destroy(indicator.gameObject);
     }
 
-    private IEnumerator HideTimer()
+    private IEnumerator EndPlayerTurn()
     {
         yield return new WaitForSeconds(0.2f);
 
         hitTimer.gameObject.SetActive(false);
+        enemy.Health -= (int)damageSum;
+
+        if (enemy.IsDead)
+        {
+            WinCombat();
+            yield break;
+        }
+
+        Debug.Log("enemy turn");
+
+        yield return new WaitForSeconds(1f);
+        StartTurn();
+    }
+
+    private void WinCombat()
+    {
+        Debug.Log("Combat end");
+    }
+
+    private void LoseCombat()
+    {
+        Debug.Log("Combat loss");
+        SceneManager.LoadScene("EndScene");
     }
 
     /// <summary>
@@ -229,16 +255,5 @@ public class CombatManager : MonoBehaviour
         hitTimingOffsets.Add(offset);
         GameObject indicator = Instantiate(hitIndicatorPrefab, hitTimer.position - (1 + offset) * hitTimerWidth * Vector3.right, Quaternion.identity, hitTimer);
         return indicator.transform;
-    }
-
-    private IEnumerator EnemyTurn()
-    {
-        // wait for hit indicator to disappear
-        yield return new WaitForSeconds(0.2f);
-
-        Debug.Log("enemy turn");
-
-        yield return new WaitForSeconds(1f);
-        StartTurn();
     }
 }
