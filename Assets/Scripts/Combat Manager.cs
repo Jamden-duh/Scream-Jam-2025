@@ -8,8 +8,13 @@ using UnityEngine.UI;
 
 public class CombatManager : MonoBehaviour
 {
+    private Player player => Player.Instance;
+
     [SerializeField]
-    private Player player;
+    private Transform playerCombatObject;
+    [SerializeField]
+    private Transform enemyCombatObject;
+
     [SerializeField]
     private Enemy enemy;
     [SerializeField]
@@ -187,9 +192,55 @@ public class CombatManager : MonoBehaviour
         }
 
         Debug.Log("enemy turn");
+        Vector3 enemyPosition = enemyCombatObject.position;
+        Vector3 playerPosition = playerCombatObject.position;
+
+        // move towards player
+        int towardsFrames = 30;
+        for (int i = 0; i < towardsFrames; i++)
+        {
+            yield return new WaitForSeconds(1 / 60f);
+            enemyCombatObject.position = Vector3.LerpUnclamped(enemyPosition, enemyPosition + (playerPosition - 
+                enemyPosition) / 2, EaseSine(i / (towardsFrames - 1f)));
+        }
+
+        // attack and move back
+        int awayFrames = 70;
+        for (int i = 0; i < awayFrames; i++)
+        {
+            yield return new WaitForSeconds(1 / 60f);
+            enemyCombatObject.position = Vector3.LerpUnclamped(enemyPosition + (playerPosition - enemyPosition) / 2, 
+                enemyPosition, EaseInOutBack(i / (awayFrames - 1f)));
+        }
+        enemyCombatObject.position = enemyPosition;
 
         yield return new WaitForSeconds(1f);
         StartTurn();
+    }
+
+    /// <summary>
+    /// https://easings.net/#easeInSine
+    /// </summary>
+    /// <param name="t"></param>
+    /// <returns></returns>
+    private float EaseSine(float t)
+    {
+        return 1 - Mathf.Cos((t * Mathf.PI) / 2);
+    }
+
+    /// <summary>
+    /// https://easings.net/#easeOutBack
+    /// </summary>
+    /// <param name="t"></param>
+    /// <returns></returns>
+    private float EaseInOutBack(float t)
+    {
+        float c1 = 1.70158f;
+        float c2 = c1 * 1.525f;
+
+        return t < 0.5
+          ? (Mathf.Pow(2 * t, 2) * ((c2 + 1) * 2 * t - c2)) / 2
+          : (Mathf.Pow(2 * t - 2, 2) * ((c2 + 1) * (t * 2 - 2) + c2) + 2) / 2;
     }
 
     private void WinCombat()
