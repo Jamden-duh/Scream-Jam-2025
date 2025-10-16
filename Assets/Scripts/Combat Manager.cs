@@ -8,7 +8,7 @@ using UnityEngine.UI;
 
 public class CombatManager : MonoBehaviour
 {
-    private Player player => Player.Instance;
+    private Player Player => Player.Instance;
 
     [SerializeField]
     private Transform playerCombatObject;
@@ -147,6 +147,7 @@ public class CombatManager : MonoBehaviour
 
         enemy.healthBar = enemyHealthBar;
         enemy.Health = enemy.maxHealth; // this sets the health bar
+        enemy.UpdateSprite();
         StartTurn();
     }
 

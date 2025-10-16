@@ -4,6 +4,25 @@ public class Player : MonoBehaviour
 {
     public static Player Instance { get; private set; }
 
+    private int awareness;
+    public static int Awareness
+    {
+        get
+        {
+            if (Instance != null)
+                return Instance.awareness;
+            return -1;
+        }
+        set
+        {
+            Instance.awareness = value;
+        }
+    }
+
+    public static bool LowAwareness => Awareness < GameManager.MediumAwarenessThreshold;
+    public static bool MedAwareness => Awareness >= GameManager.MediumAwarenessThreshold && Awareness < GameManager.HighAwarenessThreshold;
+    public static bool HighAwareness => Awareness >= GameManager.HighAwarenessThreshold;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
