@@ -9,16 +9,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 49e5f13967768364ea9051023039a5cd, type: 3}
+  m_Script: {fileID: 11500000, guid: 762608545c374c44495c1de3c3379c93, type: 3}
   m_Name: FoxDialogue
   m_EditorClassIdentifier: 
   currentDialogue:
   - "\u201COoh, a friend. And a powerful looking one, too! Yes, hello friend. You
     are an adventurer like me no doubt.\u201D "
   - "\u201CI can teach you a strong, strong move that may help you on your journey\u2026
-    for a price.\u201D"
+    for a price.\u201D "
   - "\u201CHah! Only kidding, of course. Good company is hard to find, and harder
-    to keep around. We have a duty to lend each other a hand, if you ask me!\u201D"
+    to keep around. We have a duty to lend each other a hand, if you ask me!\u201D "
   - "\u201CStay safe out there, friend. This place is more dangerous than you know.
-    We\u2019ll share our stories by campfire light someday, I\u2019m sure of it.\u201D "
-  nextQuest: {fileID: 0}
+    We\u2019ll share our stories by campfire light someday, I\u2019m sure of it.\u201D"

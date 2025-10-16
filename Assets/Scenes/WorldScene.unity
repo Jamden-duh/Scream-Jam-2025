@@ -148,8 +148,8 @@ RectTransform:
   m_GameObject: {fileID: 26875371}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.61109, y: 0.61109, z: 0.61109}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1843852640}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -167,11 +167,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 26875371}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5598e88f34f7956489590c4c71155047, type: 3}
+  m_Script: {fileID: 11500000, guid: f6e90ca09fcf62b4bbcfbde2c7dacb48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   dialogues:
-  - {fileID: 11400000, guid: 6f4c855b2f3b04e479862fa2e59545b7, type: 2}
+  - {fileID: 11400000, guid: 5004600a86f34164b9259370bf420d7f, type: 2}
   currentDialogue: []
   currentQuest: 0
   currentLine: 0
@@ -196,7 +196,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -2495727858004983608, guid: 5614e39c9c096a14d8347ab2ae4287dd, type: 3}
+  m_Sprite: {fileID: -2495727858004983608, guid: 84976925237e0f847af759a7c60b02b4, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -449,8 +449,8 @@ RectTransform:
   m_GameObject: {fileID: 207219326}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.60402, y: 0.60402, z: 0.60402}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1843852640}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -468,11 +468,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 207219326}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5598e88f34f7956489590c4c71155047, type: 3}
+  m_Script: {fileID: 11500000, guid: f6e90ca09fcf62b4bbcfbde2c7dacb48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   dialogues:
-  - {fileID: 11400000, guid: 01c8b91e616fab74da2ae2b7683fdebf, type: 2}
+  - {fileID: 11400000, guid: 6ab300d89bf540d4f8abd38c91cbdd07, type: 2}
   currentDialogue: []
   currentQuest: 0
   currentLine: 0
@@ -497,7 +497,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -95166332392167941, guid: 70e248a24f038b64c95fca8a6f1b38c5, type: 3}
+  m_Sprite: {fileID: -95166332392167941, guid: 707d516c67ec6764d8c330fcfa5a74f7, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -590,8 +590,8 @@ RectTransform:
   m_GameObject: {fileID: 270294901}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.58988, y: 0.58988, z: 0.58988}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1843852640}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -609,11 +609,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 270294901}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5598e88f34f7956489590c4c71155047, type: 3}
+  m_Script: {fileID: 11500000, guid: f6e90ca09fcf62b4bbcfbde2c7dacb48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   dialogues:
-  - {fileID: 11400000, guid: b0ea98dc45e0c0344b1e3e3d0692226d, type: 2}
+  - {fileID: 11400000, guid: ab7d66fa9430c9d4783df9358b4b724b, type: 2}
   currentDialogue: []
   currentQuest: 0
   currentLine: 0
@@ -638,7 +638,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -3352900418232539788, guid: 2f8afbbf664da8e47b5626ad43a41df4, type: 3}
+  m_Sprite: {fileID: -3352900418232539788, guid: c3a1ca08fa93cb646938a4661a802198, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -731,8 +731,8 @@ RectTransform:
   m_GameObject: {fileID: 336078762}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.54038, y: 0.54038, z: 0.54038}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1843852640}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -750,11 +750,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 336078762}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5598e88f34f7956489590c4c71155047, type: 3}
+  m_Script: {fileID: 11500000, guid: f6e90ca09fcf62b4bbcfbde2c7dacb48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   dialogues:
-  - {fileID: 11400000, guid: 14ff152a6530ce44ea7cc73adf9c5a89, type: 2}
+  - {fileID: 11400000, guid: 0c2d49166bd893a468f3a3b1e50048ab, type: 2}
   currentDialogue: []
   currentQuest: 0
   currentLine: 0
@@ -779,7 +779,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -8579758270717559778, guid: 7c90225fcb0487c4eacb78e43820c1ab, type: 3}
+  m_Sprite: {fileID: -8579758270717559778, guid: 9a01a535aebc7a24eabb817bc22ac6c2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -854,7 +854,8 @@ GameObject:
   - component: {fileID: 768832783}
   - component: {fileID: 768832786}
   - component: {fileID: 768832785}
-  - component: {fileID: 768832784}
+  - component: {fileID: 768832787}
+  - component: {fileID: 768832788}
   m_Layer: 5
   m_Name: Player
   m_TagString: Untagged
@@ -869,30 +870,18 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 768832782}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.65352, y: 0.65352, z: 0.65352}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1843852640}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 233.54211, y: 135.19464}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &768832784
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 768832782}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7277519f339385942972406ea917263d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &768832785
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -931,6 +920,138 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 768832782}
   m_CullTransparentMesh: 1
+--- !u!114 &768832787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 768832782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37d7800915d792b47bd3625677c472df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1621564131}
+  speed: 0.5
+--- !u!114 &768832788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 768832782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 571f2fa4ffb8f124686060718a4090ee, type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 768832787}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: OnMove
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 351f2ccd-1f9f-44bf-9bec-d62ac5c5f408
+    m_ActionName: 'Player/Move[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 6b444451-8a00-4d00-a97e-f47457f736a8
+    m_ActionName: 'Player/Look[/Mouse/delta]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 6c2ab1b8-8984-453a-af3d-a3c78ae1679a
+    m_ActionName: 'Player/Attack[/Mouse/leftButton,/Keyboard/enter]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 852140f2-7766-474d-8707-702459ba45f3
+    m_ActionName: 'Player/Interact[/Keyboard/e]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 27c5f898-bc57-4ee1-8800-db469aca5fe3
+    m_ActionName: 'Player/Crouch[/Keyboard/c]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: f1ba0d36-48eb-4cd5-b651-1c94a6531f70
+    m_ActionName: 'Player/Jump[/Keyboard/space]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 2776c80d-3c14-4091-8c56-d04ced07a2b0
+    m_ActionName: 'Player/Previous[/Keyboard/1]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: b7230bb6-fc9b-4f52-8b25-f5e19cb2c2ba
+    m_ActionName: 'Player/Next[/Keyboard/2]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 641cd816-40e6-41b4-8c3d-04687c349290
+    m_ActionName: 'Player/Sprint[/Keyboard/leftShift]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: c95b2375-e6d9-4b88-9c4c-c5e76515df4b
+    m_ActionName: 'UI/Navigate[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 7607c7b6-cd76-4816-beef-bd0341cfe950
+    m_ActionName: 'UI/Submit[/Keyboard/enter]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 15cef263-9014-4fd5-94d9-4e4a6234a6ef
+    m_ActionName: 'UI/Cancel[/Keyboard/escape]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 32b35790-4ed0-4e9a-aa41-69ac6d629449
+    m_ActionName: 'UI/Point[/Mouse/position]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 3c7022bf-7922-4f7c-a998-c437916075ad
+    m_ActionName: 'UI/Click[/Mouse/leftButton]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 44b200b1-1557-4083-816c-b22cbdf77ddf
+    m_ActionName: 'UI/RightClick[/Mouse/rightButton]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: dad70c86-b58c-4b17-88ad-f5e53adf419e
+    m_ActionName: 'UI/MiddleClick[/Mouse/middleButton]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 0489e84a-4833-4c40-bfae-cea84b696689
+    m_ActionName: 'UI/ScrollWheel[/Mouse/scroll]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 24908448-c609-4bc3-a128-ea258674378a
+    m_ActionName: UI/TrackedDevicePosition
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 9caa3d8a-6b2f-4e8e-8bad-6ede561bd9be
+    m_ActionName: UI/TrackedDeviceOrientation
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: Keyboard&Mouse
+  m_DefaultActionMap: Player
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &889202681
 GameObject:
   m_ObjectHideFlags: 0
@@ -972,9 +1093,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1589632414}
-  - {fileID: 752126754}
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1189541447
@@ -1081,8 +1200,8 @@ RectTransform:
   m_GameObject: {fileID: 1463889190}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.61109, y: 0.61109, z: 0.61109}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1843852640}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1100,11 +1219,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1463889190}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5598e88f34f7956489590c4c71155047, type: 3}
+  m_Script: {fileID: 11500000, guid: f6e90ca09fcf62b4bbcfbde2c7dacb48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   dialogues:
-  - {fileID: 11400000, guid: 6da029ebd9ad35044adcb1f87befbc3e, type: 2}
+  - {fileID: 11400000, guid: 9746f0f9fa840154dad2adbc6bd56d91, type: 2}
   currentDialogue: []
   currentQuest: 0
   currentLine: 0
@@ -1129,7 +1248,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 5183906277966830183, guid: caeefef56727f944e90681ae9c2f8eb5, type: 3}
+  m_Sprite: {fileID: 5183906277966830183, guid: 2fb1cfc7419de9447801a6793f6dfb91, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1204,6 +1323,7 @@ GameObject:
   - component: {fileID: 1621564128}
   - component: {fileID: 1621564130}
   - component: {fileID: 1621564129}
+  - component: {fileID: 1621564131}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -1235,7 +1355,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1621564126}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dfe4082f7d33ea34e8b055db94921cff, type: 3}
+  m_Script: {fileID: 11500000, guid: 2ea10cc9efc87e247a18eabfa0c4e491, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   activeNPC: {fileID: 1721574827}
@@ -1249,9 +1369,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 1621564126}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a2fbdc15c130c44a9355a430c3b4a17, type: 3}
+  m_Script: {fileID: 11500000, guid: f47b5a2213a720f47940edb4f9bc580d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1621564131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1621564126}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7277519f339385942972406ea917263d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  X: 0
+  Y: 0
 --- !u!1 &1721574825
 GameObject:
   m_ObjectHideFlags: 0
@@ -1281,8 +1415,8 @@ RectTransform:
   m_GameObject: {fileID: 1721574825}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.55453, y: 0.55453, z: 0.55453}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1843852640}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1300,11 +1434,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1721574825}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5598e88f34f7956489590c4c71155047, type: 3}
+  m_Script: {fileID: 11500000, guid: f6e90ca09fcf62b4bbcfbde2c7dacb48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   dialogues:
-  - {fileID: 11400000, guid: a506a29db35e08c43bc385c19ec55189, type: 2}
+  - {fileID: 11400000, guid: 73283008d2d4f6e47acd146ab03a3890, type: 2}
   currentDialogue: []
   currentQuest: 0
   currentLine: 0
@@ -1329,7 +1463,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -5941233870088339553, guid: 4ce9775160e585f41893ddf7aca612d7, type: 3}
+  m_Sprite: {fileID: -5941233870088339553, guid: 78e1a75864cf43d46927f099a7abd21c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

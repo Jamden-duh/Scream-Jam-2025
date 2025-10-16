@@ -9,16 +9,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 49e5f13967768364ea9051023039a5cd, type: 3}
+  m_Script: {fileID: 11500000, guid: 762608545c374c44495c1de3c3379c93, type: 3}
   m_Name: HareDialogue
   m_EditorClassIdentifier: 
   currentDialogue:
-  - "\u201CHeh heh. Hello traveller. I am the Hare, heh heh.\u201D "
+  - "\u201CHeh heh. Hello traveller. I am the Hare, heh heh.\u201D"
   - "\u201CLook at you. You have an untouched mind, I can tell. Maybe that\u2019s
-    for the best. The truth is not for everyone, heh heh.\u201D"
+    for the best. The truth is not for everyone, heh heh.\u201D "
   - "\u201CThe world is full of truths, yes. It\u2019s a very good thing to feed
     your head and find them. We can see them when we fly, but we don\u2019t always
     like what we see, heh heh.\u201D "
   - "\u201CAnd you\u2026 you look awfully sad. Maybe it\u2019s best you stay on the
     ground. I\u2019m sure you can be perfectly happy without flying, heh heh.\u201D"
-  nextQuest: {fileID: 0}

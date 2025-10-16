@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 49e5f13967768364ea9051023039a5cd, type: 3}
+  m_Script: {fileID: 11500000, guid: 762608545c374c44495c1de3c3379c93, type: 3}
   m_Name: PossumDialogue
   m_EditorClassIdentifier: 
   currentDialogue:
@@ -20,7 +20,6 @@ MonoBehaviour:
     I have. Horrible things. Things that shouldn\u2019t be real.\u201D"
   - "\u201CYes, I know. I sound like a lunatic. I may as well strap a sign to my
     chest and chant \u2018The End is Nigh!\u2019 But it\u2019s true, I tell you.
-    Something is wrong about the creatures around here.\u201D"
+    Something is wrong about the creatures around here.\u201D "
   - "\u201CWhen they get you in a corner, you need to give them a good swiping and
-    scurry off. Playing dead doesn\u2019t always work with these things.\u201D"
-  nextQuest: {fileID: 0}
+    scurry off. Playing dead doesn\u2019t always work with these things.\u201D "

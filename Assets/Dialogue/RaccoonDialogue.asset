@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 49e5f13967768364ea9051023039a5cd, type: 3}
+  m_Script: {fileID: 11500000, guid: 762608545c374c44495c1de3c3379c93, type: 3}
   m_Name: RaccoonDialogue
   m_EditorClassIdentifier: 
   currentDialogue:
@@ -20,8 +20,7 @@ MonoBehaviour:
   - "\u201CI just can\u2019t put my paw on it, but something feels off, if only ever
     so slightly. Did you know that nobody here knows where this place is or how they
     got here? For goodness\u2019 sake, I don\u2019t think anyone here even knows
-    their names! And we don\u2019t even question it? Dullards, the lot of them!\u201D"
+    their names! And we don\u2019t even question it? Dullards, the lot of them!\u201D "
   - "\u201CApologies, please excuse my rudeness. There just has to be something around
     here that will make it all make sense. I know they say curiosity killed the cat,
-    but I\u2019m a raccoon, hoho!\u201D"
-  nextQuest: {fileID: 0}
+    but I\u2019m a raccoon, hoho!\u201D "

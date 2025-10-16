@@ -9,15 +9,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 49e5f13967768364ea9051023039a5cd, type: 3}
+  m_Script: {fileID: 11500000, guid: 762608545c374c44495c1de3c3379c93, type: 3}
   m_Name: SquirrelDialogue
   m_EditorClassIdentifier: 
   currentDialogue:
   - "\u201CIt\u2019s a beautiful day, isn\u2019t it? Why don\u2019t you sit down
-    and relax with me for a while?\u201D "
+    and relax with me for a while?\u201D"
   - "\u201CSome people don\u2019t seem to like it here, but I think it\u2019s great.
     We\u2019ve got a beautiful village, adventure, friends\u2026 everything we could
-    ever want.\u201D"
+    ever want.\u201D "
   - "\u201CIt\u2019d be silly to throw that all away. Let\u2019s just sit here and
-    enjoy the view. You don\u2019t have anywhere you need to be.\u201D "
-  nextQuest: {fileID: 0}
+    enjoy the view. You don\u2019t have anywhere you need to be.\u201D"

@@ -9,14 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 49e5f13967768364ea9051023039a5cd, type: 3}
+  m_Script: {fileID: 11500000, guid: 762608545c374c44495c1de3c3379c93, type: 3}
   m_Name: DeerDialogue
   m_EditorClassIdentifier: 
   currentDialogue:
   - "\u201CHello, young one. It is good to have company here in this sleepy town.
-    Not many come through here nowadays.\u201D "
+    Not many come through here nowadays.\u201D"
   - "\u201CMy name? Hmm\u2026 I can\u2019t seem to recall. Perhaps you can just call
     me The Deer.\u201D "
   - "\u201CWell, you best be on your way, young one. Pay no mind to an old fool who
-    can\u2019t even remember his own name.\u201D"
-  nextQuest: {fileID: 0}
+    can\u2019t even remember his own name.\u201D "
