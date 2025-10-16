@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49e5f13967768364ea9051023039a5cd, type: 3}
+  m_Name: SquirrelDialogue
+  m_EditorClassIdentifier: 
+  currentDialogue:
+  - "\u201CIt\u2019s a beautiful day, isn\u2019t it? Why don\u2019t you sit down
+    and relax with me for a while?\u201D "
+  - "\u201CSome people don\u2019t seem to like it here, but I think it\u2019s great.
+    We\u2019ve got a beautiful village, adventure, friends\u2026 everything we could
+    ever want.\u201D"
+  - "\u201CIt\u2019d be silly to throw that all away. Let\u2019s just sit here and
+    enjoy the view. You don\u2019t have anywhere you need to be.\u201D "
+  nextQuest: {fileID: 0}

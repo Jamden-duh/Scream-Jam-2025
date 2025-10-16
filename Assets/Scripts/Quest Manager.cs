@@ -7,7 +7,7 @@ using UnityEngine.UIElements;
 public class QuestManager : MonoBehaviour
 {
     public static QuestManager Instance { get; private set; }
-    public NPC activeNPC;
+    public NPC activeNPC; // SET STARTING NPC
     public bool startQuest;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -25,8 +25,6 @@ public class QuestManager : MonoBehaviour
             // Prevents from being destroyed on scene load
             DontDestroyOnLoad(gameObject);
         }
-
-        // SET STARTING NPC
     }
 
     // Update is called once per frame

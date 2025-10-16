@@ -5,5 +5,4 @@ using UnityEngine;
 public class Dialogue : ScriptableObject
 {
     [SerializeField] public List<string> currentDialogue;
-    [SerializeField] public NPC nextQuest;
 }

@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49e5f13967768364ea9051023039a5cd, type: 3}
+  m_Name: FoxDialogue
+  m_EditorClassIdentifier: 
+  currentDialogue:
+  - "\u201COoh, a friend. And a powerful looking one, too! Yes, hello friend. You
+    are an adventurer like me no doubt.\u201D "
+  - "\u201CI can teach you a strong, strong move that may help you on your journey\u2026
+    for a price.\u201D"
+  - "\u201CHah! Only kidding, of course. Good company is hard to find, and harder
+    to keep around. We have a duty to lend each other a hand, if you ask me!\u201D"
+  - "\u201CStay safe out there, friend. This place is more dangerous than you know.
+    We\u2019ll share our stories by campfire light someday, I\u2019m sure of it.\u201D "
+  nextQuest: {fileID: 0}
