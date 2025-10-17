@@ -15,10 +15,11 @@ public class PlayerController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         // move player based on input
         this.transform.position += new Vector3(moveInput.x, moveInput.y, 0);
+
         // update saved position
         player.X = this.gameObject.transform.position.x;
         player.Y = this.gameObject.transform.position.y;
@@ -26,6 +27,6 @@ public class PlayerController : MonoBehaviour
 
     public void OnMove(InputAction.CallbackContext context)
     {
-        moveInput = context.ReadValue<Vector2>() * speed;
+        moveInput = context.ReadValue<Vector2>() * speed; 
     }
 }

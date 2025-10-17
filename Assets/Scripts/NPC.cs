@@ -8,6 +8,9 @@ public class NPC : MonoBehaviour
     [SerializeField] public int currentQuest; // index for dialogues
     [SerializeField] public int currentLine;  // index for currentDialogue
     [SerializeField] public NPC nextNPC;
+    public bool active = false;
+
+    [SerializeField] public Sprite npcSprite;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -23,8 +26,10 @@ public class NPC : MonoBehaviour
 
     public void NextQuest()
     {
+        active = false;
         // sets next NPC to talk to
         QuestManager.Instance.activeNPC = nextNPC;
+        nextNPC.active = true;
         // changes dialogue for current NPC (if any)
         if (currentQuest < dialogues.Count)
             currentQuest++;
@@ -37,5 +42,13 @@ public class NPC : MonoBehaviour
             currentLine++;
         else
             currentLine = -1;
+    }
+
+    public void OnClick()
+    {
+        if (active == true)
+        {
+            QuestManager.Instance.startQuest = true;
+        }
     }
 }
